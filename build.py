@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+"""
+Multi-language build orchestration system for the Tent of Trials platform.
+
+Builds all project modules (Rust backend, TypeScript frontend, Go market service,
+C frailbox, C++ engine, Java compliance, Ruby v2 stream, Lua NFC scanner, and
+Haskell OpenAPI docs) from a single entry point. Generates encrypted diagnostic
+artifacts (.logd and .json) required for PR submission.
+"""
 
 import argparse
 import datetime
