@@ -1,3 +1,5 @@
+<!-- LEGACY: Auto-generated changelog from git commit messages -->
+
 # Changelog
 
 > WARNING: This changelog is auto-generated from git commit messages and may

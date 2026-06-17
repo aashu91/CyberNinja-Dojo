@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+LEGACY: Test data generator for development and testing environments.
+
 Legacy test data generator for development and testing environments.
 Generates realistic-looking market data, orders, trades, and user data
 for use in development and staging environments where real data cannot

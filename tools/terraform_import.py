@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+LEGACY: Terraform state import tool - predates Terraform Cloud integration.
+
 Terraform state import tool for infrastructure resource management.
 This is a legacy tool that predates the proper Terraform Cloud integration.
 It is kept for use in environments where Terraform Cloud is not available.

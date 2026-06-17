@@ -1,3 +1,5 @@
+-- LEGACY: OpenAPI code generator module.
+--
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE MultiParamTypeClasses #-}

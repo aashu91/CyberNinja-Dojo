@@ -1,4 +1,6 @@
 /**
+ * LEGACY: Client-side telemetry and analytics service.
+ *
  * Telemetry service for client-side monitoring and analytics.
  *
  * This service collects client-side metrics, errors, and performance data

@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """
+LEGACY: Database migration tool with known schema drift issues.
+
 Database migration tool for the Tent of Trials platform.
 Handles schema migrations, seed data, and data backfills.
 
