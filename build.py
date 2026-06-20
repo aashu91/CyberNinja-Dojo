@@ -162,6 +162,14 @@ MODULES = [
         clean_cmd=["echo", "Nothing to clean"],
         build_dir=None,
     ),
+    Module(
+        name="legacy-migration",
+        language="Python",
+        dir=ROOT / "tools",
+        build_cmd=["python3", "test_legacy_migration_dry_run.py"],
+        clean_cmd=["echo", "Python has no build artifacts to clean"],
+        build_dir=None,
+    ),
 ]
 
 ENCRYPTLY_DIR = ROOT / "tools" / "encryptly"
