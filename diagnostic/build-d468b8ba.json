@@ -1,0 +1,24 @@
+{
+  "generated_at": "2026-06-25T02:57:21.131177+00:00",
+  "commit": "d468b8ba",
+  "diagnostic_logd": "diagnostic\\build-d468b8ba.logd",
+  "diagnostic_logd_error": null,
+  "message_blocker": null,
+  "chunked": false,
+  "chunk_size_bytes": null,
+  "password": "1e69b15d34a4208744a4",
+  "decrypt_command": "encryptly unpack diagnostic\\build-d468b8ba.logd <outdir> --password 1e69b15d34a4208744a4",
+  "total_modules": 1,
+  "passed": 0,
+  "failed": 1,
+  "modules": [
+    {
+      "name": "backend",
+      "status": "FAIL",
+      "elapsed_seconds": 300.006,
+      "artifact": null,
+      "output": "BUILD TIMEOUT (300s)"
+    }
+  ],
+  "pr_note": "Include the encrypted diagnostic logd artifact(s): diagnostic\\build-d468b8ba.logd. The encrypted .logd is the required diagnostic content for PR review; this JSON file is metadata. Maintainers may ask you to remove these diagnostic artifacts before merging."
+}
