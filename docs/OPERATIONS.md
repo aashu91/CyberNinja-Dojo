@@ -310,3 +310,34 @@ Audit logs are retained for 365 days and include:
 2. Update Kubernetes secret: `kubectl create secret tls tot-tls --cert=new.crt --key=new.key -n tent-production --dry-run=client -o yaml | kubectl apply -f -`
 3. Restart services: `kubectl rollout restart deployment -n tent-production`
 4. Verify new certificate: `openssl s_client -connect api.example.com:443 -servername api.example.com`
+
+## Connector Wait-All Timeout
+
+The connector library's `connector_wait_all()` function now has proper
+timeout-aware behavior. A new `connector_wait_all_ex()` function provides
+detailed reporting of completed and unfinished operations.
+
+### Key Changes
+
+| Function | Description |
+|----------|-------------|
+| `connector_wait_all(timeout_ms)` | Legacy wrapper; now delegates to `wait_all_ex` |
+| `connector_wait_all_ex(timeout_ms, result)` | Timeout-aware wait with result reporting |
+
+### Result Structure
+
+```c
+typedef struct {
+    uint32_t total_pending;   /* Operations pending at call time */
+    uint32_t completed;       /* Operations that finished before deadline */
+    uint32_t unfinished;      /* Operations still in queue at deadline */
+    int      all_completed;   /* 1 if all finished, 0 otherwise */
+} connector_wait_result_t;
+```
+
+### Behavior
+
+- **All complete**: Returns `CONNECTOR_SUCCESS` with `all_completed = 1`
+- **Partial timeout**: Returns `CONNECTOR_ERROR_TIMEOUT` with count of unfinished operations
+- **Zero timeout**: Non-blocking check; returns immediately with current queue state
+- **NULL result**: Safe to pass NULL if detailed counts aren't needed
